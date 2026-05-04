@@ -1,9 +1,25 @@
-const tech = [];
-const screenshots = [];
-const videos = [];
+import { tech, screenshots, videos, loadProjects, createJson } from "./data.js";
 
-const projects = [];
-const projectList = { projects: [] };
+const btnTech = document.getElementById("addMoreTech");
+
+btnTech.addEventListener("click", function (event) {
+  event.preventDefault();
+  addTech();
+});
+
+const btnSnap = document.getElementById("addMoreScreenshots");
+
+btnSnap.addEventListener("click", function (event) {
+  event.preventDefault();
+  addScreenshots();
+});
+
+const btnVid = document.getElementById("addMoreVids");
+
+btnVid.addEventListener("click", function (event) {
+  event.preventDefault();
+  addVideos();
+});
 
 function addTech() {
   const value = document.getElementById("technologies").value;
@@ -23,6 +39,13 @@ function addVideos() {
   document.getElementById("videos").value = "";
 }
 
+const btnSubmit = document.getElementById("submit");
+
+btnSubmit.addEventListener("click", function (event) {
+  event.preventDefault();
+  getProjData();
+});
+
 function getProjData() {
   const name = document.getElementById("projectName").value;
   const status = document.getElementById("status").value;
@@ -30,23 +53,5 @@ function getProjData() {
   const liveDemo = document.getElementById("liveDemo").value;
 
   loadProjects(name, status, description, liveDemo);
+  createJson();
 }
-function loadProjects(name, status, description, liveDemo) {
-  const project = {
-    name: name,
-    status: status,
-    description: description,
-    technologies: tech,
-    screenshots: screenshots,
-    videos: videos,
-    liveDemo: liveDemo,
-  };
-  projects.push(project);
-}
-function createJson() {
-  const projectsJson = JSON.stringify(projects, null, 2);
-
-  console.log(projectsJson);
-}
-
-createJson();
