@@ -35,8 +35,8 @@
         <input
           type="file"
           accept="image/*"
-          name="projectName"
-          id="screenshot"
+          name="snap"
+          id="screenshots"
           required
         />
       </div>
@@ -45,20 +45,14 @@
         <input
           type="file"
           accept="video/*"
-          name="projectName"
-          id="video"
+          name="videoPresentation"
+          id="videos"
           required
         />
       </div>
       <div class="liveDemos">
         <label for="liveDemo"> Enter live demo link: </label>
-        <input
-          type="text"
-          accept="link"
-          name="projectName"
-          id="liveDemo"
-          required
-        />
+        <input type="url" name="demoLink" id="liveDemo" required />
       </div>
     </form>
   </body>
