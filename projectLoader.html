@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head></head>
+  <body>
+    <form>
+      <div class="projName">
+        <label for="projectName"> Enter the project name: </label>
+        <input type="text" name="projectName" id="projectName" required />
+      </div>
+      <div class="projectDescription">
+        <label for="description"> Enter the project name: </label>
+        <input
+          type="text"
+          name="projectDescription"
+          id="description"
+          required
+        />
+      </div>
+      <div class="projectStatus">
+        <label for="status"> Project Status: </label>
+        <input list="statusOptions" name="projectStatus" id="status" required />
+        <datalist id="statusOptions">
+          <option value="Complete"></option>
+          <option value="In progress"></option>
+          <option value="Research phase"></option>
+          <option value="In queue"></option>
+        </datalist>
+      </div>
+      <div class="technologies">
+        <label for="technologies"> Technologies used: </label>
+        <input type="text" name="projectTech" id="technologies" required />
+      </div>
+      <div class="screenshots">
+        <label for="screenshot"> Screenshot upload: </label>
+        <input
+          type="file"
+          accept="image/*"
+          name="projectName"
+          id="screenshot"
+          required
+        />
+      </div>
+      <div class="videos">
+        <label for="video"> Video upload: </label>
+        <input
+          type="file"
+          accept="video/*"
+          name="projectName"
+          id="video"
+          required
+        />
+      </div>
+      <div class="liveDemos">
+        <label for="liveDemo"> Enter live demo link: </label>
+        <input
+          type="text"
+          accept="link"
+          name="projectName"
+          id="liveDemo"
+          required
+        />
+      </div>
+    </form>
+  </body>
+</html>

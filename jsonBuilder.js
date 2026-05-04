@@ -10,3 +10,5 @@ projects.forEach((project, index) => {
 });
 
 const projectsJson = JSON.stringify(projectList, null, 2);
+
+console.log(projectsJson);
