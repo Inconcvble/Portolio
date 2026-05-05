@@ -22,21 +22,48 @@ btnVid.addEventListener("click", function (event) {
 });
 
 function addTech() {
-  const value = document.getElementById("technologies").value;
-  tech.push(value);
-  document.getElementById("technologies").value = "";
+  const techInput = document.getElementById("technologies");
+  const currentValue = techInput.value;
+
+  if (currentValue === "") return;
+
+  const newInput = document.createElement("input");
+  newInput.name = "techItem[]";
+  newInput.value = currentValue;
+
+  techInput.parentElement.appendChild(newInput);
+  techInput.value = "";
 }
 
 function addScreenshots() {
-  const value = document.getElementById("screenshots").files[0];
-  screenshots.push(value);
-  document.getElementById("screenshots").value = "";
+  const snapElement = document.getElementById("screenshots");
+  const file = snapElement.files[0];
+
+  const currentValue = file.name;
+
+  if (currentValue === "") return;
+
+  const newInput = document.createElement("input");
+  newInput.name = "snapItem[]";
+  newInput.value = currentValue;
+
+  snapElement.parentElement.appendChild(newInput);
+  snapElement.value = "";
 }
 
 function addVideos() {
-  const value = document.getElementById("videos").files[0];
-  videos.push(value);
-  document.getElementById("videos").value = "";
+  const vidElement = document.getElementById("videos");
+  const file = vidElement.files[0];
+  const currentValue = file.name;
+
+  if (currentValue === "") return;
+
+  const newInput = document.createElement("input");
+  newInput.name = "vidItem[]";
+  newInput.value = currentValue;
+
+  vidElement.parentElement.appendChild(newInput);
+  vidElement.value = "";
 }
 
 const btnSubmit = document.getElementById("submit");
@@ -51,6 +78,30 @@ function getProjData() {
   const status = document.getElementById("status").value;
   const description = document.getElementById("description").value;
   const liveDemo = document.getElementById("liveDemo").value;
+
+  const techInput = document.getElementById("technologies");
+  if (techInput.value !== "") {
+    tech.push(techInput.value);
+  }
+  const techIns = document.getElementsByName("techItem[]");
+  const allTechValues = Array.from(techIns).map((techIn) => techIn.value);
+  tech.push(...allTechValues);
+
+  const snapElement = document.getElementById("screenshots");
+  if (snapElement.files[0]) {
+    screenshots.push(snapElement.files[0].name);
+  }
+  const snapIns = document.getElementsByName("snapItem[]");
+  const allSnapValues = Array.from(snapIns).map((snapIn) => snapIn.value);
+  screenshots.push(...allSnapValues);
+
+  const vidElement = document.getElementById("videos");
+  if (vidElement.files[0]) {
+    videos.push(vidElement.files[0].name);
+  }
+  const vidIns = document.getElementsByName("vidItem[]");
+  const allVidValues = Array.from(vidIns).map((vidIn) => vidIn.value);
+  videos.push(...allVidValues);
 
   loadProjects(name, status, description, liveDemo);
   createJson();
