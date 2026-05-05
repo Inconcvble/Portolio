@@ -20,5 +20,5 @@ export function loadProjects(name, status, description, liveDemo) {
 export function createJson() {
   const projectsJson = JSON.stringify(projects, null, 2);
 
-  console.log(projectsJson);
+  return projectsJson;
 }
