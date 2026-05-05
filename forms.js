@@ -41,7 +41,7 @@ function addScreenshots() {
   const snapElement = document.getElementById("screenshots");
   const file = snapElement.files[0];
 
-  const currentValue = file.name;
+  const currentValue = file;
 
   if (currentValue === "") return;
 
@@ -56,7 +56,7 @@ function addScreenshots() {
 function addVideos() {
   const vidElement = document.getElementById("videos");
   const file = vidElement.files[0];
-  const currentValue = file.name;
+  const currentValue = file;
 
   if (currentValue === "") return;
 
@@ -91,36 +91,26 @@ function getProjData() {
 
   const snapElement = document.getElementById("screenshots");
   if (snapElement.files[0]) {
-    screenshots.push(snapElement.files[0].name);
+    screenshots.push(snapElement.files[0]);
   }
-  const snapIns = document.getElementsByName("snapItem[]");
-  const allSnapValues = Array.from(snapIns).map((snapIn) => snapIn.value);
-  screenshots.push(...allSnapValues);
 
   const vidElement = document.getElementById("videos");
   if (vidElement.files[0]) {
-    videos.push(vidElement.files[0].name);
+    videos.push(vidElement.files[0]);
   }
-  const vidIns = document.getElementsByName("vidItem[]");
-  const allVidValues = Array.from(vidIns).map((vidIn) => vidIn.value);
-  videos.push(...allVidValues);
 
-  const project = {
-    name: name,
-    status: status,
-    description: description,
-    technologies: tech,
-    screenshots: screenshots,
-    videos: videos,
-    liveDemo: liveDemo,
-  };
+  const formData = new FormData();
+  formData.append("name", name);
+  formData.append("description", description);
+  formData.append("status", status);
+  formData.append("technologies", tech);
+  screenshots.forEach((file) => formData.append("screenshots", file));
+  videos.forEach((file) => formData.append("videos", file));
+  formData.append("liveDemo", liveDemo);
 
   fetch("http://localhost:3000/addProject", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(project),
+    body: formData,
   })
     .then((res) => res.json())
     .then((data) => {
