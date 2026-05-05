@@ -16,6 +16,7 @@ app.post(
   "/addProject",
   upload.fields([{ name: "screenshots" }, { name: "videos" }]),
   async function (req, res) {
+    console.log(req.files);
     console.log(req.body, req.files);
     const filePath = path.join(__dirname, "projects.json");
 

@@ -41,30 +41,19 @@ function addScreenshots() {
   const snapElement = document.getElementById("screenshots");
   const file = snapElement.files[0];
 
-  const currentValue = file;
+  if (!file) return;
 
-  if (currentValue === "") return;
-
-  const newInput = document.createElement("input");
-  newInput.name = "snapItem[]";
-  newInput.value = currentValue;
-
-  snapElement.parentElement.appendChild(newInput);
+  screenshots.push(file);
   snapElement.value = "";
 }
 
 function addVideos() {
   const vidElement = document.getElementById("videos");
   const file = vidElement.files[0];
-  const currentValue = file;
 
-  if (currentValue === "") return;
+  if (!file) return;
 
-  const newInput = document.createElement("input");
-  newInput.name = "vidItem[]";
-  newInput.value = currentValue;
-
-  vidElement.parentElement.appendChild(newInput);
+  videos.push(file);
   vidElement.value = "";
 }
 
