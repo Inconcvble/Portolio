@@ -1,4 +1,6 @@
-import { tech, screenshots, videos, loadProjects, createJson } from "./data.js";
+const tech = [];
+const screenshots = [];
+const videos = [];
 
 const btnTech = document.getElementById("addMoreTech");
 
@@ -103,6 +105,29 @@ function getProjData() {
   const allVidValues = Array.from(vidIns).map((vidIn) => vidIn.value);
   videos.push(...allVidValues);
 
-  loadProjects(name, status, description, liveDemo);
-  createJson();
+  const project = {
+    name: name,
+    status: status,
+    description: description,
+    technologies: tech,
+    screenshots: screenshots,
+    videos: videos,
+    liveDemo: liveDemo,
+  };
+
+  fetch("http://localhost:3000/addProject", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(project),
+  })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+      tech.length = 0;
+      screenshots.length = 0;
+      videos.length = 0;
+    })
+    .catch((err) => console.error(err));
 }

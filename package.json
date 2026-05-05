@@ -13,12 +13,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/Inconcvble/Portolio/issues"
   },
   "homepage": "https://github.com/Inconcvble/Portolio#readme",
   "dependencies": {
-    "Express": "^3.0.1"
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
   }
 }
