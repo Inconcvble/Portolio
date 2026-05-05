@@ -1,18 +1,1 @@
-[
-  {
-    "name": "Psychwave",
-    "status": "Complete",
-    "description": "House",
-    "technologies": [
-      "html",
-      "css"
-    ],
-    "screenshots": [
-      "CI Workflow.png"
-    ],
-    "videos": [
-      "Arcane_Intro.mp4"
-    ],
-    "liveDemo": "https://www.instagram.com/"
-  }
-]
+[]
