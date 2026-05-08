@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  color: aliceblue;
+  overflow: hidden;
+}
+
+.background {
+  position: absolute;
+}
+.background-soundwave {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+.racer {
+  position: relative;
+  top: 60vh;
+  width: 2em;
+
+  animation-name: racerScroll;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.header {
+  right: 2em;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.navigation {
+  margin-left: auto;
+}
+
+.navigation a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+.headshot {
+  top: 3rem;
+}
+
+.headshot-image {
+  width: 20%;
+}
+
+main {
+  position: relative;
+  left: 2em;
+}
+.description {
+  position: relative;
+}
+
+.projects {
+  position: relative;
+}
+
+.projects-grid {
+  display: flex;
+}
+.project-card {
+  display: block;
+}
+
+footer {
+  position: relative;
+  left: 2em;
+}
+.portfolio-footer {
+  position: relative;
+}
+
+@keyframes racerScroll {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
