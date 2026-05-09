@@ -1,25 +1,31 @@
 const canvas = document.querySelector("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+canvas.style.backgroundColor = "rgb(5, 5, 15)";
+
 const ctx = canvas.getContext("2d");
-ctx.fillStyle = "green";
+
+const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
+gradient.addColorStop(0, "#800080");
+gradient.addColorStop(1, "#ff0000");
+
+ctx.fillStyle = gradient;
 
 const position = [];
-const barWidth = 4;
-const barHeight = 2;
+const barWidth = 9;
+const barHeight = 10;
 
 function createPositions() {
-  for (let i = 3; i <= canvas.width - 3; i += 5) {
+  for (let i = 10; i <= canvas.width - 10; i += 10) {
     position.push(i);
   }
-  return position;
 }
 
 function createColumn(pos, peak) {
   ctx.beginPath();
   for (let i = peak; i < 30; i++) {
-    let space = i + 5;
-    ctx.rect(pos, i * 2 + space, barWidth, barHeight);
-    ctx.strokeStyle = "white";
-    ctx.stroke();
+    let space = i;
+    ctx.rect(pos, i * 12 + space, barWidth, barHeight);
   }
   ctx.fill();
 }
@@ -27,7 +33,7 @@ function createColumn(pos, peak) {
 function columnAtPos() {
   if (!position || position.length === 0) return;
   for (let i = 0; i < position.length; i++) {
-    let dynamicPeak = Math.floor(Math.random() * 18) + 10;
+    let dynamicPeak = Math.floor(Math.random() * 19) + 5;
 
     createColumn(position.at(i), dynamicPeak);
   }

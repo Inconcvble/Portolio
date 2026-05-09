@@ -2,10 +2,13 @@ body {
   margin: 0;
   color: aliceblue;
   overflow: hidden;
+  position: relative;
 }
 canvas {
   width: 100vw;
   height: 100vh;
+  position: absolute;
+  z-index: -1;
 }
 .background {
   position: absolute;
