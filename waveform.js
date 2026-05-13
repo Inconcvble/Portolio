@@ -1,19 +1,23 @@
 const canvas = document.querySelector("canvas");
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = document.body.scrollHeight;
 canvas.style.backgroundColor = "rgb(5, 5, 15)";
 
 const ctx = canvas.getContext("2d");
 
-const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
-gradient.addColorStop(0, "#800080");
-gradient.addColorStop(1, "#ff0000");
+const topOfBars = 10 * 14;
+const bottomOfBars = canvas.height;
+
+const gradient = ctx.createLinearGradient(0, bottomOfBars, 0, topOfBars);
+gradient.addColorStop(0.5, "#2bff00");
+gradient.addColorStop(1, "#ff0303c0");
 
 ctx.fillStyle = gradient;
 
 const position = [];
 const barWidth = 9;
 const barHeight = 10;
+const cornerRad = 2;
 
 function createPositions() {
   for (let i = 10; i <= canvas.width - 10; i += 10) {
@@ -25,7 +29,7 @@ function createColumn(pos, peak) {
   ctx.beginPath();
   for (let i = peak; i < 30; i++) {
     let space = i;
-    ctx.rect(pos, i * 12 + space, barWidth, barHeight);
+    ctx.roundRect(pos, i * 12 + space, barWidth, barHeight, cornerRad);
   }
   ctx.fill();
 }

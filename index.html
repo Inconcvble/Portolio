@@ -1,68 +1,111 @@
 <!doctype html>
 <html>
   <head>
-    <meta
-      content="width=device-width, initial-scale=1"
-      id="viewport"
-      name="viewport"
-    />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8" />
     <script src="waveform.js" defer></script>
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
-    <canvas></canvas>
-    <div class="background">
-      <img src="assets/images/motorbike.png" class="racer" />
-    </div>
-    <header class="header">
-      <div class="navigation">
-        <nav>
-          <a href="index.html"> Home </a>
-          <a href="about.html"> About </a>
-          <a href="contact.html"> Contact </a>
-          <a href="projects.html"> Projects </a>
-        </nav>
+    <canvas id="canvas"></canvas>
+
+    <nav class="nav">
+      <span class="nav-logo">Ntsakelo M.</span>
+      <div class="nav-links">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
       </div>
-      <div class="headshot">
-        <img src="assets/images/headshot.jpeg" class="headshot-image" />
-      </div>
-    </header>
-    <main>
-      <section>
-        <div class="description">
-          <h1>Who I am</h1>
-          <p>Ntsakelo Maluleke. From South Africa</p>
+      <a href="#contact" class="nav-cta">Hire me</a>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-left">
+        <span class="hero-eyebrow">Available for freelance</span>
+        <h1>I build things that work.</h1>
+        <p>
+          Software developer from Johannesburg. I turn ideas into clean,
+          functional applications.
+        </p>
+        <div class="hero-actions">
+          <a href="#work" class="btn-primary">See my work</a>
+          <a href="#contact" class="btn-ghost">Get in touch</a>
         </div>
-      </section>
-      <section>
-        <div class="projects">
-          <h2>Projects</h2>
-          <div class="projects-grid">
-            <div class="project-card">
-              <img src="..." alt="Project screenshot" />
-              <h3>Project Name</h3>
-              <p>Short description</p>
-              <a href="...">View Project</a>
-            </div>
-            <div class="project-card">
-              <img src="..." alt="Project screenshot" />
-              <h3>Project Name</h3>
-              <p>Short description</p>
-              <a href="...">View Project</a>
-            </div>
-            <div class="project-card">
-              <img src="..." alt="Project screenshot" />
-              <h3>Project Name</h3>
-              <p>Short description</p>
-              <a href="...">View Project</a>
-            </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/images/headshot.jpeg" alt="Ntsakelo Maluleke" />
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-num">8+</span
+        ><span class="stat-label">Projects shipped</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">3</span><span class="stat-label">Languages</span>
+      </div>
+      <div class="stat">
+        <span class="stat-num">100%</span
+        ><span class="stat-label">On-time delivery</span>
+      </div>
+    </section>
+
+    <section class="services" id="work">
+      <h2 class="section-label">What I offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Web development</h3>
+          <p>Responsive sites and web apps built to last.</p>
+        </div>
+        <div class="service-card">
+          <h3>Desktop apps</h3>
+          <p>Windows tools with clean, native-feeling UI.</p>
+        </div>
+        <div class="service-card">
+          <h3>Backend & data</h3>
+          <p>APIs, databases, and logic that scales.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects">
+      <h2 class="section-label">My Projects</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-thumb"></div>
+          <div class="project-body">
+            <span class="project-tag">C# / .NET</span>
+            <h3>Octo — security chatbot</h3>
+            <p>
+              Cybersecurity awareness assistant with NLP simulation and activity
+              logging.
+            </p>
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="portfolio-footer">
-      <h1>Footer</h1>
+        <div class="project-card">
+          <div class="project-thumb"></div>
+          <div class="project-body">
+            <span class="project-tag">Unity / C#</span>
+            <h3>Roguelite game jam</h3>
+            <p>
+              Dead Cells-inspired combat prototype with full enemy class
+              hierarchy.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="cta" id="contact">
+      <div class="cta-text">
+        <h2>Let's build something.</h2>
+        <p>Open to projects — reach out and let's talk.</p>
+      </div>
+      <a href="mailto:you@email.com" class="btn-primary">Get in touch</a>
+    </section>
+
+    <footer>
+      <p>Ntsakelo Maluleke &copy; 2025</p>
     </footer>
   </body>
 </html>
