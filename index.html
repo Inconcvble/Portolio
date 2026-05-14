@@ -4,11 +4,12 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta charset="UTF-8" />
     <script src="waveform.js" defer></script>
+    <script type="module" src="script.js" defer></script>
     <link href="styles.css" rel="stylesheet" />
   </head>
   <body>
     <canvas id="canvas"></canvas>
-
+    <img src="assets/images/motorbike.png" class="racer" />
     <nav class="nav">
       <span class="nav-logo">Ntsakelo M.</span>
       <div class="nav-links">
@@ -71,30 +72,7 @@
 
     <section class="projects">
       <h2 class="section-label">My Projects</h2>
-      <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-thumb"></div>
-          <div class="project-body">
-            <span class="project-tag">C# / .NET</span>
-            <h3>Octo — security chatbot</h3>
-            <p>
-              Cybersecurity awareness assistant with NLP simulation and activity
-              logging.
-            </p>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-thumb"></div>
-          <div class="project-body">
-            <span class="project-tag">Unity / C#</span>
-            <h3>Roguelite game jam</h3>
-            <p>
-              Dead Cells-inspired combat prototype with full enemy class
-              hierarchy.
-            </p>
-          </div>
-        </div>
-      </div>
+      <div class="projects-grid" id="projects-grid"></div>
     </section>
     <section class="cta" id="contact">
       <div class="cta-text">

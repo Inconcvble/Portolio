@@ -2,66 +2,153 @@
 <html>
   <head>
     <script src="forms.js" type="module" defer></script>
+    <link href="adminStyles.css" rel="stylesheet" />
   </head>
   <body>
-    <form>
-      <div class="projName">
-        <label for="projectName"> Enter the project name: </label>
-        <input type="text" name="projectName" id="projectName" required />
-      </div>
-      <div class="projectDescription">
-        <label for="description"> Enter the project description: </label>
-        <input
-          type="text"
-          name="projectDescription"
-          id="description"
-          required
-        />
-      </div>
-      <div class="projectStatus">
-        <label for="status"> Project Status: </label>
-        <input list="statusOptions" name="projectStatus" id="status" required />
-        <datalist id="statusOptions">
-          <option value="Complete"></option>
-          <option value="In progress"></option>
-          <option value="Research phase"></option>
-          <option value="In queue"></option>
-        </datalist>
-      </div>
-      <div class="technologies">
-        <label for="technologies"> Technologies used: </label>
-        <input type="text" name="projectTech" id="technologies" required />
-        <button id="addMoreTech">+</button>
-      </div>
-      <div class="screenshots">
-        <label for="screenshots"> Screenshot upload: </label>
-        <button id="addMoreScreenshots">+</button>
-        <input
-          type="file"
-          accept="image/*"
-          name="snap"
-          id="screenshots"
-          required
-        />
-      </div>
-      <div class="videos">
-        <label for="videos"> Video upload: </label>
-        <input
-          type="file"
-          accept="video/*"
-          name="videoPresentation"
-          id="videos"
-          required
-        />
-        <button id="addMoreVids">+</button>
-      </div>
-      <div class="liveDemos">
-        <label for="liveDemo"> Enter live demo link: </label>
-        <input type="url" name="demoLink" id="liveDemo" required />
-      </div>
+    <p>What would you like to do:</p>
+    <button type="button" id="btnShowAdd">Add new project</button>
+    <section class="form-section newProject">
+      <form>
+        <div class="projName">
+          <label for="projectName"> Enter the project name: </label>
+          <input type="text" name="projectName" id="projectName" required />
+        </div>
+        <div class="projectDescription">
+          <label for="description"> Enter the project description: </label>
+          <input
+            type="text"
+            name="projectDescription"
+            id="description"
+            required
+          />
+        </div>
+        <div class="projectStatus">
+          <label for="status"> Project Status: </label>
+          <input
+            list="statusOptions"
+            name="projectStatus"
+            id="status"
+            required
+          />
+          <datalist id="statusOptions">
+            <option value="Complete"></option>
+            <option value="In progress"></option>
+            <option value="Research phase"></option>
+            <option value="In queue"></option>
+          </datalist>
+        </div>
+        <div class="technologies">
+          <label for="technologies"> Technologies used: </label>
+          <input type="text" name="projectTech" id="technologies" required />
+          <button type="button" id="addMoreTech">+</button>
+        </div>
+        <div class="screenshots">
+          <label for="screenshots"> Screenshot upload: </label>
+          <button type="button" id="addMoreScreenshots">+</button>
+          <input type="file" accept="image/*" name="snap" id="screenshots" />
+        </div>
+        <div class="videos">
+          <label for="videos"> Video upload: </label>
+          <input
+            type="file"
+            accept="video/*"
+            name="videoPresentation"
+            id="videos"
+          />
+          <button type="button" id="addMoreVids">+</button>
+        </div>
+        <div class="liveDemos">
+          <label for="liveDemo"> Enter live demo link: </label>
+          <input type="text" name="demoLink" id="liveDemo" required />
+        </div>
+      </form>
       <div class="submit">
-        <button id="submit">Submit</button>
+        <button type="button" id="submit">Submit</button>
       </div>
-    </form>
+    </section>
+
+    <button type="button" id="btnShowUpdate">Update existing project</button>
+    <section class="form-section updatedProject">
+      <form>
+        <div>
+          <label for="updatedProjectSelect">Project ID:</label>
+          <select id="updatedProjectSelect">
+            <option value="">-- Select a project --</option>
+          </select>
+        </div>
+        <div class="updatedProjName">
+          <label for="updatedProjectName"> Enter the project name: </label>
+          <input
+            type="text"
+            name="projectName"
+            id="updatedProjectName"
+            required
+          />
+        </div>
+        <div class="updatedProjectDescription">
+          <label for="updatedDescription">
+            Enter the project description:
+          </label>
+          <input
+            type="text"
+            name="projectDescription"
+            id="updatedDescription"
+            required
+          />
+        </div>
+        <div class="updatedProjectStatus">
+          <label for="updatedStatus"> Project Status: </label>
+          <input
+            list="updatedStatusOptions"
+            name="projectStatus"
+            id="updatedStatus"
+            required
+          />
+          <datalist id="updatedStatusOptions">
+            <option value="Complete"></option>
+            <option value="In progress"></option>
+            <option value="Research phase"></option>
+            <option value="In queue"></option>
+          </datalist>
+        </div>
+        <div class="updatedTechnologies">
+          <label for="updatedTechnologies"> Technologies used: </label>
+          <input
+            type="text"
+            name="projectTech"
+            id="updatedTechnologies"
+            required
+          />
+          <button type="button" id="updatedAddMoreTech">+</button>
+        </div>
+        <div class="updatedScreenshots">
+          <label for="updatedScreenshots"> Screenshot upload: </label>
+          <button type="button" id="updatedAddMoreScreenshots">+</button>
+          <input
+            type="file"
+            accept="image/*"
+            name="snap"
+            id="updatedScreenshots"
+          />
+        </div>
+        <div class="updatedVideos">
+          <label for="updatedVideos"> Video upload: </label>
+          <input
+            type="file"
+            accept="video/*"
+            name="videoPresentation"
+            id="updatedVideos"
+          />
+          <button type="button" id="updatedAddMoreVids">+</button>
+        </div>
+        <div class="updatedLiveDemos">
+          <label for="updatedLiveDemo"> Enter live demo link: </label>
+          <input type="text" name="demoLink" id="updatedLiveDemo" required />
+        </div>
+        <div class="updatedSubmit">
+          <button type="button" id="updatedSubmit">Submit</button>
+        </div>
+      </form>
+    </section>
   </body>
 </html>

@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "id": "781c8220-22cd-45f0-ba9d-c6173b9dde9e",
+    "name": "Octo — security chatbot",
+    "status": "In progress",
+    "description": "Cybersecurity awareness assistant with NLP simulation and activity               logging.",
+    "technologies": [
+      "C#",
+      ".NET"
+    ],
+    "screenshots": [],
+    "videos": [],
+    "liveDemo": ""
+  },
+  {
+    "id": "9ed470c6-5da2-49d5-97c2-61adf95ffa8e",
+    "name": "Roguelite game jam",
+    "status": "In progress",
+    "description": "Dead Cells-inspired combat prototype with full enemy class               hierarchy.",
+    "technologies": [
+      "Unity",
+      "C#"
+    ],
+    "screenshots": [],
+    "videos": [],
+    "liveDemo": ""
+  },
+  {
+    "id": "974b5bcb-0324-4f5e-b737-33dc88cf5990",
+    "name": "Psychwave",
+    "status": "Complete",
+    "description": "House",
+    "technologies": [
+      "html, css",
+      "html",
+      "css"
+    ],
+    "screenshots": [
+      "1778725151265.png"
+    ],
+    "videos": [],
+    "liveDemo": "https://www.instagram.com/"
+  }
+]
