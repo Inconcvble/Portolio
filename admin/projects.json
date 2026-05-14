@@ -26,19 +26,20 @@
     "liveDemo": ""
   },
   {
-    "id": "974b5bcb-0324-4f5e-b737-33dc88cf5990",
+    "id": "d4286268-8a8b-4974-bf2f-b2767f447933",
     "name": "Psychwave",
     "status": "Complete",
-    "description": "House",
+    "description": "Chicken",
     "technologies": [
-      "html, css",
-      "html",
-      "css"
+      "css",
+      "html"
     ],
     "screenshots": [
-      "1778725151265.png"
+      "1778781849264.png"
     ],
-    "videos": [],
+    "videos": [
+      "1778781849355.mp4"
+    ],
     "liveDemo": "https://www.instagram.com/"
   }
 ]

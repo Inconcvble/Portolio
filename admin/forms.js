@@ -150,15 +150,19 @@ btnActiveAdd.addEventListener("click", function (event) {
   btnBack.style.display = "block";
 });
 
-btnActiveUpdate.addEventListener("click", function (event) {
+btnActiveUpdate.addEventListener("click", async function (event) {
   event.preventDefault();
   updateProj.classList.add("active");
+
+  const response = await fetch("http://localhost:3000/projects");
+  const freshProjects = await response.json();
 
   const updatedProjectSelect = document.getElementById("updatedProjectSelect");
 
   updatedProjectSelect.innerHTML =
     '<option value="">-- Select a project --</option>';
-  projects.forEach((project) => {
+
+  freshProjects.forEach((project) => {
     const option = document.createElement("option");
     option.value = project.id;
     option.textContent = project.name;
@@ -167,7 +171,7 @@ btnActiveUpdate.addEventListener("click", function (event) {
 
   updatedProjectSelect.addEventListener("change", function () {
     const selectedId = updatedProjectSelect.value;
-    const selectedProject = projects.find((p) => p.id === selectedId);
+    const selectedProject = freshProjects.find((p) => p.id === selectedId);
 
     if (!selectedProject) return;
 
@@ -201,6 +205,7 @@ btnUpdatedSubmit.addEventListener("click", function (event) {
 });
 
 function updateProjData() {
+  console.log("Submitting");
   const id = document.getElementById("updatedProjectSelect").value;
   const name = document.getElementById("updatedProjectName").value;
   const status = document.getElementById("updatedStatus").value;
@@ -208,9 +213,6 @@ function updateProjData() {
   const liveDemo = document.getElementById("updatedLiveDemo").value;
 
   const techInput = document.getElementById("updatedTechnologies");
-  if (techInput.value !== "") {
-    tech.push(techInput.value);
-  }
   const techValues = techInput.value.split(",").map((t) => t.trim());
   tech.push(...techValues);
 
