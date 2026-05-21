@@ -1,6 +1,6 @@
 const projectsGrid = document.getElementById("projects-grid");
 
-const response = await fetch("http://localhost:3000/projects");
+const response = await fetch("https://portfolio-zcu0.onrender.com");
 const projects = await response.json();
 
 const racer = document.querySelector(".racer");
