@@ -1,6 +1,6 @@
 const projectsGrid = document.getElementById("projects-grid");
 
-const response = await fetch("https://portfolio-zcu0.onrender.com");
+const response = await fetch("https://portfolio-zcu0.onrender.com/projects");
 const projects = await response.json();
 
 const racer = document.querySelector(".racer");
@@ -27,7 +27,7 @@ projects.forEach((project) => {
 
   if (project.screenshots.length > 0) {
     const projectThumbImg = document.createElement("img");
-    projectThumbImg.src = `http://localhost:3000/uploads/${project.screenshots[0]}`;
+    projectThumbImg.src = `https://portfolio-zcu0.onrender.com/uploads/${project.screenshots[0]}`;
     projectThumbnail.appendChild(projectThumbImg);
   }
 
